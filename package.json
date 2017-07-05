@@ -1,0 +1,9 @@
+{
+  "name": "@quilt/slackin",
+  "version": "0.0.1",
+  "main": "./slackin.js",
+  "license": "MIT",
+  "dependencies": {
+    "@quilt/quilt": "quilt/quilt"
+  }
+}
