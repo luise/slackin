@@ -8,7 +8,7 @@ const slackTeam = 'YOUR_SLACK_TEAM';
 // https://github.com/rauchg/slackin.
 const slackToken = 'YOUR_SLACK_TOKEN';
 
-const slackinService = slackin.New(slackTeam, slackToken);
+const slackinService = slackin.createSlackinContainer(slackTeam, slackToken);
 slackinService.allowFrom(publicInternet, 80);
 
 const deployment = createDeployment();
