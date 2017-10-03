@@ -8,12 +8,12 @@ const slackTeam = 'YOUR_SLACK_TEAM';
 // https://github.com/rauchg/slackin.
 const slackToken = 'YOUR_SLACK_TOKEN';
 
-const slackinService = slackin.createSlackinContainer(slackTeam, slackToken);
-slackinService.allowFrom(publicInternet, 80);
+const slackinContainer = slackin.createSlackinContainer(slackTeam, slackToken);
+slackinContainer.allowFrom(publicInternet, 80);
 
 const deployment = createDeployment();
 const machine = new Machine({ provider: 'Amazon', size: 't2.micro' });
 
 deployment.deploy(machine.asMaster());
 deployment.deploy(machine.asWorker());
-slackinService.deploy(deployment);
+slackinContainer.deploy(deployment);
