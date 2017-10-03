@@ -17,6 +17,6 @@ function createSlackinContainer(slackTeamId, slackToken, port = 80) {
   publicInternet.allowFrom(slackin, 443);
 
   return slackin;
-};
+}
 
 module.exports = { createSlackinContainer };
