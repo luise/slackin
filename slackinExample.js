@@ -16,4 +16,4 @@ const machine = new Machine({ provider: 'Amazon', size: 't2.micro' });
 
 deployment.deploy(machine.asMaster());
 deployment.deploy(machine.asWorker());
-deployment.deploy(slackinService);
+slackinService.deploy(deployment);
