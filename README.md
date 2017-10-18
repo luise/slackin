@@ -1,6 +1,6 @@
-# Slackin for Quilt
+# Slackin for Kelda
 This repository implements a [Slackin](https://github.com/rauchg/slackin) specification
-for [Quilt](http://quilt.io).
+for [Kelda](http://kelda.io).
 
 To create a new Slackin service, simply pass your Slack team ID and Slack token to the
 constructor:

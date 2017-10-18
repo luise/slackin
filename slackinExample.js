@@ -1,4 +1,4 @@
-const { Machine, createDeployment, publicInternet } = require('@quilt/quilt');
+const { Machine, createDeployment, publicInternet } = require('kelda');
 const slackin = require('./slackin');
 
 // From the domain of your login page (i.e. https://YOUR_SLACK_TEAM.slack.com).

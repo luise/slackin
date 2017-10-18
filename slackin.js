@@ -1,4 +1,4 @@
-const { Container, publicInternet } = require('@quilt/quilt');
+const { Container, publicInternet } = require('kelda');
 
 /**
  * Creates a container running slackin. Callers must explicitly allow
@@ -6,7 +6,7 @@ const { Container, publicInternet } = require('@quilt/quilt');
  * accessible.
  */
 function createSlackinContainer(slackTeamId, slackToken, port = 80) {
-  const slackin = new Container('slackin', 'quilt/slackin', {
+  const slackin = new Container('slackin', 'keldaio/slackin', {
     command: ['slackin', '--port', port.toString()],
     env: {
       SLACK_SUBDOMAIN: slackTeamId,
