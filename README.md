@@ -6,7 +6,7 @@ To create a new Slackin service, simply pass your Slack team ID and Slack token 
 constructor:
 
 ```javascript
-var slackinService = slackin.createSlackinContainer("YOUR_SLACK_TEAM", "YOUR_SLACK_TOKEN");
+const slackinService = slackin.createSlackinContainer('YOUR_SLACK_TEAM', 'YOUR_SLACK_TOKEN');
 ```
 
 As a third argument, you can optionally specify the port Slackin should receive
