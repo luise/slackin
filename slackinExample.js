@@ -1,4 +1,4 @@
-const { Machine, createDeployment, publicInternet } = require('kelda');
+const { Machine, Infrastructure, publicInternet } = require('kelda');
 const slackin = require('./slackin');
 
 // From the domain of your login page (i.e. https://YOUR_SLACK_TEAM.slack.com).
@@ -11,9 +11,7 @@ const slackToken = 'YOUR_SLACK_TOKEN';
 const slackinContainer = slackin.createSlackinContainer(slackTeam, slackToken);
 slackinContainer.allowFrom(publicInternet, 80);
 
-const deployment = createDeployment();
 const machine = new Machine({ provider: 'Amazon', size: 't2.micro' });
+const infra = new Infrastructure(machine, machine);
 
-deployment.deploy(machine.asMaster());
-deployment.deploy(machine.asWorker());
-slackinContainer.deploy(deployment);
+slackinContainer.deploy(infra);
