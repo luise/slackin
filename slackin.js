@@ -1,4 +1,4 @@
-const { Container, publicInternet } = require('kelda');
+const { Container, publicInternet, allowTraffic } = require('kelda');
 
 /**
  * Creates a container running slackin. Callers must explicitly allow
@@ -14,7 +14,7 @@ function createSlackinContainer(slackTeamId, slackToken, port = 80) {
     },
   });
 
-  publicInternet.allowFrom(slackin, 443);
+  allowTraffic(slackin, publicInternet, 443);
 
   return slackin;
 }
