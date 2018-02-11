@@ -12,6 +12,6 @@ const slackinContainer = slackin.createSlackinContainer(slackTeam, slackToken);
 allowTraffic(publicInternet, slackinContainer, 80);
 
 const machine = new Machine({ provider: 'Amazon', size: 't2.micro' });
-const infra = new Infrastructure(machine, machine);
+const infra = new Infrastructure({ masters: machine, workers: machine });
 
 slackinContainer.deploy(infra);

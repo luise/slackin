@@ -6,7 +6,9 @@ const { Container, publicInternet, allowTraffic } = require('kelda');
  * accessible.
  */
 function createSlackinContainer(slackTeamId, slackToken, port = 80) {
-  const slackin = new Container('slackin', 'keldaio/slackin', {
+  const slackin = new Container({
+    name: 'slackin',
+    image: 'keldaio/slackin',
     command: ['slackin', '--port', port.toString()],
     env: {
       SLACK_SUBDOMAIN: slackTeamId,
